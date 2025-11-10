@@ -16,7 +16,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    bottom: 2%;
+    bottom: 0;
     background: rgba(0, 0, 0, 0.4);
     padding: 2rem;
     color: white;
@@ -169,6 +169,7 @@ body {
     border: 1px solid #757575;
     text-align: center;
     box-sizing: border-box;
+    position: relative;
 }
 
 .modal-content h2 {
@@ -209,6 +210,16 @@ body {
 
 .pay-btn:hover {
     background-color: #13c78a;
+}
+
+.close-modal{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
 }
 
 .hidden{

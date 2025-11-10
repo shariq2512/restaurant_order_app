@@ -20,6 +20,9 @@ document.addEventListener('click', function(e){
     // if(e.target.classList.contains('pay-btn')){
     //     handlePaybtnClick()
     // }
+    if(e.target.classList.contains('close-modal')){
+        handleCloseModalBtn()
+    }
 })
 
 
@@ -71,13 +74,13 @@ function renderOrder(){
         </div>
         <button class="complete-btn">Complete Order</button>
     `
-    
 }
 
 function openPaymentModal(){
     modalEl.classList.remove('hidden')
     modalEl.innerHTML = `
         <div class="modal-content">
+            <button class="close-modal">X</button>
             <h2>Enter payment details</h2>
             <form id="payment-form">
                 <input type="text" id="name" placeholder="Enter your name" required>
@@ -85,12 +88,15 @@ function openPaymentModal(){
                 <input type="text" id="cvv" placeholder="Enter CVV" required>
                 <button type="submit" class="pay-btn">Pay</button>
             </form>
-            <button class="close-modal">X</button>
         </div>
     `
     
     const paymentForm = document.getElementById('payment-form')
     paymentForm.addEventListener('submit', handlePaybtnClick)
+}
+
+function handleCloseModalBtn(){
+    modalEl.classList.add("hidden")
 }
 
 function handlePaybtnClick(e){
